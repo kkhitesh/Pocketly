@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pocektly</title>
+    <link
+      rel="shortcut icon"
+      type="image/gif"
+      href="{{url_for('static',filename='favicon.ico')}}"
+    />
+    <link rel="stylesheet" type="text/css" href="../static/style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="row">
+        <div class="col">
+          <div class="mobile">
+            <img id="search" src="../static/searchr.svg" />
+          </div>
+        </div>
+        <div class="col col2">
+          <div class="logo">
+            <img src="../static/logof.png" />
+          </div>
+          <div class="cont">
+            {% block content %}{% endblock %}
+            <div id="link">12345678</div>
+            <div id="link">12345678</div>
+          </div>
+        </div>
+        <footer id="ft">
+          Made with <font color="red">❤</font> by Hitesh Kowdiki
+        </footer>
+      </div>
+    </div>
+  </body>
+</html>
