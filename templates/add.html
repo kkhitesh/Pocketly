@@ -1,4 +1,4 @@
-{% extends base.html %} {% block content %}
+{% extends 'base.html' %} {% block content %}
 <p id="link">URL: {{original_url}}</p>
 <p id="link">S_URL: {{url_for('redrect',url=short_url)}}</p>
 {% endblock %}

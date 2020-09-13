@@ -33,19 +33,52 @@ body {
 
 .col2 {
   display: flex;
-  padding-left: 20%;
   flex-flow: column nowrap;
+  align-items: center;
   justify-content: space-evenly;
 }
 
+.cont {
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  justify-items: center;
+}
+
 #link {
-  padding: 2%;
+  font-size: 1.2em;
+  padding: 3%;
   background-color: #f0f0f0;
   border: none;
   border-radius: 20px;
   margin: 2%;
-  margin-top: 5%;
-  width: 60%;
+  margin-bottom: 5%;
+  width: 100%;
+}
+
+#link:focus {
+  outline: none;
+}
+
+#btn {
+  background-color: transparent;
+  border: 2.5px solid #f6044a;
+  border-radius: 20px;
+  padding: 10px 20px;
+  margin-left: 75%;
+  transition: padding 0.5s;
+}
+
+#btn:focus {
+  outline: none;
+}
+
+#btn:hover {
+  text-align: left;
+  background-color: #f6044a;
+  color: white;
+  padding: 10px 40px;
+  margin-left: 65%;
 }
 
 .mobile {
