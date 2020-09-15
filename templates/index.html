@@ -1,6 +1,12 @@
 {% extends 'base.html' %} {% block content %}
 <form action="{{url_for('add_link')}}" method="POST">
-  <input type="text" id="link" name="original-url" placeholder="Enter URL" />
+  <input
+    type="text"
+    id="link"
+    name="original-url"
+    placeholder="Enter URL"
+    required
+  />
   <button id="btn" type="submit">Shorten</button>
 </form>
 {% endblock %}
