@@ -1,3 +1,4 @@
+import os
 from flask import Flask, render_template, redirect, request
 from flask_sqlalchemy import SQLAlchemy
 from models import *
@@ -6,7 +7,7 @@ from models import *
 app = Flask(__name__)
 
 # Configure database
-app.config['SQLALCHEMY_DATABASE_URI'] = "postgres://gndlmmxcrqydky:3f5cc03a603208a4f04939b4bba0ade83a777bb4b49f0885cd11cb45212bd9c3@ec2-184-73-249-9.compute-1.amazonaws.com:5432/df2u7gotgs07nk"
+app.config['SQLALCHEMY_DATABASE_URI'] = os.environ.get('DATABASE_URL')
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 
 db = SQLAlchemy(app)
@@ -40,4 +41,4 @@ def redrect(url):
 
 
 if __name__ == "__main__":
-    app.run(debug=True)
+    app.run()
