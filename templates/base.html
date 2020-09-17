@@ -28,7 +28,9 @@
         </div>
         <div class="col col2">
           <div class="logo">
-            <img src="{{url_for('static',filename='logof.png')}}" />
+            <a href="{{url_for('index')}}">
+              <img src="{{url_for('static',filename='logof.png')}}" />
+            </a>
           </div>
           <div class="cont">{% block content %}{% endblock %}</div>
         </div>
@@ -37,7 +39,6 @@
         </footer>
       </div>
     </div>
-    <script src="{{ url_for('static', filename='main.js')
-    }}"></script>
+    {% block js %}{% endblock%}
   </body>
 </html>

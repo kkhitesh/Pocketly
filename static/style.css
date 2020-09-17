@@ -45,7 +45,7 @@ body {
   justify-items: center; */
 }
 
-#link {
+.link {
   font-size: 1.2em;
   padding: 15px;
   background-color: #f0f0f0;
@@ -61,7 +61,7 @@ body {
   font-size: 1.1em;
 }
 
-#link:focus {
+.link:focus {
   outline: none;
 }
 

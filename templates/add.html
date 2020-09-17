@@ -1,14 +1,15 @@
 {% extends 'base.html' %} {% block content %}
 <form>
   <h1 style="font-size: 1.2em; color: blue">URL:</h1>
-  <input type="text" id="link" value="{{original_url}}" readonly />
+  <input type="text" class="link" value="{{original_url}}" readonly />
   <h1 style="font-size: 1.2em; color: blue">Short URL:</h1>
   <input
     type="text"
-    id="link"
+    class="link"
+    id="copylink"
     value="{{url_for('redrect',url=short_url,_external=true)}}"
     readonly
-  />
+  ></input>
 </form>
 <div class="tip">
   <button id="btn" onclick="copy()" onmouseout="out()">
@@ -16,16 +17,22 @@
     Copy
   </button>
 </div>
-
-<script>
+{% endblock %} {% block js %}
+<script type="text/javascript">
   function copy() {
-    var txt = document.getElementById("copyLink");
-    txt.select();
-    txt.setSelectionRange(0, 99999);
-    document.execCommand("copy");
-
-    var tip = document.getElementById("tooltip");
-    tip.innerHTML = "Copied: " + txt.value;
+    var txt = document.querySelector("#copylink").value;
+    console.log(txt);
+    const el = document.createElement('textarea');
+    el.value=txt;
+    el.style.position='absolute';
+    el.style.left='-9999px';
+    document.body.appendChild(el);
+    el.select();
+    el.setSelectionRange(0,99999);
+    document.execCommand('copy');
+    var tip = document.querySelector("#tooltip");
+    tip.innerHTML = "Copied!";
+    document.body.removeChild(el);
   }
 
   function out() {
